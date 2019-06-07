@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BOARD_NOTICE">
+          <Key>
+            <PropertyRef Name="BOARD_IDX" />
+            <PropertyRef Name="E_BUKRS" />
+            <PropertyRef Name="E_WERKS" />
+          </Key>
+          <Property Name="BOARD_IDX" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USERID" Type="varchar2" MaxLength="20" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="60" />
+          <Property Name="USERNM" Type="varchar2" MaxLength="60" />
+          <Property Name="TITLE" Type="varchar2" MaxLength="200" />
+          <Property Name="PASSWD" Type="varchar2" MaxLength="40" />
+          <Property Name="WDATE" Type="varchar2" MaxLength="30" />
+          <Property Name="UDATE" Type="varchar2" MaxLength="30" />
+          <Property Name="COUNTS" Type="number" Precision="38" Scale="0" />
+          <Property Name="TAG" Type="varchar2" MaxLength="4" />
+          <Property Name="RE_IDX" Type="number" Precision="38" Scale="0" />
+          <Property Name="RE_STEP" Type="number" Precision="38" Scale="0" />
+          <Property Name="RE_LEVEL" Type="number" Precision="38" Scale="0" />
+          <Property Name="CONTENT" Type="long" />
+          <Property Name="FNAME" Type="varchar2" MaxLength="200" />
+          <Property Name="FSIZE" Type="varchar2" MaxLength="24" />
+          <Property Name="FCOUNTS" Type="number" Precision="38" Scale="0" />
+          <Property Name="POPUP" Type="varchar2" MaxLength="10" />
+          <Property Name="SDATE" Type="varchar2" MaxLength="20" />
+          <Property Name="EDATE" Type="varchar2" MaxLength="20" />
+          <Property Name="E_BUKRS" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="E_WERKS" Type="varchar2" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="BOARD_NOTICE" EntityType="Self.BOARD_NOTICE" Schema="EDI" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BOARD_NOTICE">
+          <Key>
+            <PropertyRef Name="BOARD_IDX" />
+            <PropertyRef Name="E_BUKRS" />
+            <PropertyRef Name="E_WERKS" />
+          </Key>
+          <Property Name="BOARD_IDX" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USERID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="USERNM" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="TITLE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="WDATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UDATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="COUNTS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TAG" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="RE_IDX" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RE_STEP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RE_LEVEL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CONTENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FSIZE" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="FCOUNTS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="POPUP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SDATE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EDATE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="E_BUKRS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="E_WERKS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BOARD_NOTICE" EntityType="Self.BOARD_NOTICE" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="BOARD_NOTICE">
+            <EntityTypeMapping TypeName="Model.BOARD_NOTICE">
+              <MappingFragment StoreEntitySet="BOARD_NOTICE">
+                <ScalarProperty Name="BOARD_IDX" ColumnName="BOARD_IDX" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="USERNM" ColumnName="USERNM" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="PASSWD" ColumnName="PASSWD" />
+                <ScalarProperty Name="WDATE" ColumnName="WDATE" />
+                <ScalarProperty Name="UDATE" ColumnName="UDATE" />
+                <ScalarProperty Name="COUNTS" ColumnName="COUNTS" />
+                <ScalarProperty Name="TAG" ColumnName="TAG" />
+                <ScalarProperty Name="RE_IDX" ColumnName="RE_IDX" />
+                <ScalarProperty Name="RE_STEP" ColumnName="RE_STEP" />
+                <ScalarProperty Name="RE_LEVEL" ColumnName="RE_LEVEL" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+                <ScalarProperty Name="FSIZE" ColumnName="FSIZE" />
+                <ScalarProperty Name="FCOUNTS" ColumnName="FCOUNTS" />
+                <ScalarProperty Name="POPUP" ColumnName="POPUP" />
+                <ScalarProperty Name="SDATE" ColumnName="SDATE" />
+                <ScalarProperty Name="EDATE" ColumnName="EDATE" />
+                <ScalarProperty Name="E_BUKRS" ColumnName="E_BUKRS" />
+                <ScalarProperty Name="E_WERKS" ColumnName="E_WERKS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
